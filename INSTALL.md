@@ -3,7 +3,6 @@
 Run the installation script:
 
     ./install.sh
-Or follow the manual installation steps in INSTALL.md.
 
 # Usage
 
