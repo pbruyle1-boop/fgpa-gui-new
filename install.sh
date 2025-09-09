@@ -97,12 +97,12 @@ mkdir -p ~/fpga_controller
 cd ~/fpga_controller
 
 # Check if files exist in current directory (for git cloned repo)
-if [ -f "../fpga_gpio_controller.py" ]; then
+if [ -f "fpga_gpio_controller.py" ]; then
     echo "📋 Copying files from repository..."
-    cp ../fpga_gpio_controller.py .
-    cp ../fpga_controller.html .
-    if [ -f "../scripts/start_webserver.py" ]; then
-        cp ../scripts/start_webserver.py .
+    cp fpga_gpio_controller.py ~/fpga_controller/
+    cp fpga_controller.html ~/fpga_controller/
+    if [ -f "scripts/start_webserver.py" ]; then
+        cp scripts/start_webserver.py ~/fpga_controller/
     fi
 else
     echo "⚠️  Project files not found in parent directory"
