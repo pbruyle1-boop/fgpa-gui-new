@@ -38,8 +38,8 @@ Raspberry Pi GPIO → UDN2981A Input → UDN2981A Output → LED → Ground
 
 1. **Clone and setup:**
    ```bash
-   git clone <repository-url>
-   cd fpga-gpio-controller
+   git clone 
+   cd fpga-gui-new
    chmod +x install.sh
    ./install.sh
 
