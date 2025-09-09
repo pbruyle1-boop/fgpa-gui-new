@@ -1,0 +1,31 @@
+[Unit]
+Description=FPGA GPIO Controller
+Documentation=https://github.com/your-repo/fpga-gpio-controller
+After=network.target mosquitto.service
+Wants=mosquitto.service
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/fpga_controller
+ExecStart=/usr/bin/python3 /home/pi/fpga_controller/fpga_gpio_controller.py
+Restart=always
+RestartSec=5
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=false
+ReadWritePaths=/home/pi/fpga_controller /tmp
+
+# Environment
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
