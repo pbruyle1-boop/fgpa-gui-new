@@ -190,7 +190,7 @@
             margin-top: 20px;
             font-family: monospace;
             font-size: 12px;
-            max-height: 150px;
+            max-height: 200px;
             overflow-y: auto;
         }
     </style>
@@ -206,7 +206,7 @@
         <div class="connect-row">
             <div class="input-group">
                 <label>MQTT Broker Address</label>
-                <input type="text" id="server" value="">
+                <input type="text" id="server" value="localhost">
             </div>
             <div class="input-group">
                 <label>WebSocket Port</label>
@@ -371,6 +371,7 @@
             debug(`Connecting to ${server}:${port}`);
             
             try {
+                // Use Paho MQTT over WebSocket
                 const wsUrl = `ws://${server}:${port}`;
                 client = mqtt.connect(wsUrl);
                 
@@ -481,18 +482,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             debug('Page loaded');
             
-            // Auto-detect server IP from current URL
-            let serverIP = window.location.hostname;
-            
-            // If no hostname or it's a file:// URL, use localhost
-            if (!serverIP || serverIP === '') {
-                serverIP = 'localhost';
-            }
-            
-            // Set the detected IP in the input field
-            document.getElementById('server').value = serverIP;
-            debug(`Detected server: ${serverIP}`);
-            
             for (let i = 1; i <= 3; i++) {
                 const fpga = `fpga${i}`;
                 
@@ -508,12 +497,6 @@
             }
             
             updateDisplay();
-            
-            // Auto-connect after 1 second delay
-            setTimeout(() => {
-                debug('Auto-connecting...');
-                connect();
-            }, 1000);
         });
     </script>
 </body>
