@@ -18,7 +18,7 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             background: #2d2d2d;
             border-radius: 10px;
@@ -107,7 +107,7 @@
         
         .fpga-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
         
@@ -127,9 +127,9 @@
         }
         
         .leds {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
             margin-bottom: 25px;
         }
         
@@ -138,15 +138,15 @@
         }
         
         .led-name {
-            font-size: 11px;
+            font-size: 12px;
             color: #b5b5b5;
             margin-bottom: 8px;
             font-weight: 500;
         }
         
         .led {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             border: 2px solid #666;
             margin: 0 auto;
@@ -160,23 +160,13 @@
         
         .controls {
             display: grid;
-            gap: 8px;
+            gap: 12px;
         }
         
         .control-row {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-        }
-        
-        .control-item label {
-            font-size: 11px;
-            margin-bottom: 3px;
-        }
-        
-        .control-item select {
-            padding: 6px;
-            font-size: 12px;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
         }
         
         select {
@@ -186,7 +176,6 @@
         .update-btn {
             margin-top: 8px;
             background: #28a745;
-            grid-column: 1 / -1;
         }
         
         .update-btn:hover {
@@ -232,16 +221,8 @@
                 <div class="fpga-title">FPGA 1</div>
                 <div class="leds">
                     <div class="led-col">
-                        <div class="led-name">Dan</div>
-                        <div class="led off" id="fpga1-dan"></div>
-                    </div>
-                    <div class="led-col">
-                        <div class="led-name">Nate</div>
-                        <div class="led off" id="fpga1-nate"></div>
-                    </div>
-                    <div class="led-col">
-                        <div class="led-name">Ben</div>
-                        <div class="led off" id="fpga1-ben"></div>
+                        <div class="led-name">User</div>
+                        <div class="led off" id="fpga1-user"></div>
                     </div>
                     <div class="led-col">
                         <div class="led-name">Loaded</div>
@@ -250,32 +231,20 @@
                 </div>
                 <div class="controls">
                     <div class="control-row">
-                        <div class="control-item">
-                            <label>Dan</label>
-                            <select id="fpga1-dan-sel">
-                                <option value="false">Off</option>
-                                <option value="true">On</option>
+                        <div>
+                            <label>User</label>
+                            <select id="fpga1-user-sel">
+                                <option value="none">None</option>
+                                <option value="dan">Dan</option>
+                                <option value="nate">Nate</option>
+                                <option value="ben">Ben</option>
                             </select>
                         </div>
-                        <div class="control-item">
-                            <label>Nate</label>
-                            <select id="fpga1-nate-sel">
-                                <option value="false">Off</option>
-                                <option value="true">On</option>
-                            </select>
-                        </div>
-                        <div class="control-item">
-                            <label>Ben</label>
-                            <select id="fpga1-ben-sel">
-                                <option value="false">Off</option>
-                                <option value="true">On</option>
-                            </select>
-                        </div>
-                        <div class="control-item">
+                        <div>
                             <label>Loaded</label>
                             <select id="fpga1-loaded-sel">
                                 <option value="false">Off</option>
-                                <option value="true">On</option>
+                                <option value="true">Loaded</option>
                             </select>
                         </div>
                     </div>
@@ -288,16 +257,8 @@
                 <div class="fpga-title">FPGA 2</div>
                 <div class="leds">
                     <div class="led-col">
-                        <div class="led-name">Dan</div>
-                        <div class="led off" id="fpga2-dan"></div>
-                    </div>
-                    <div class="led-col">
-                        <div class="led-name">Nate</div>
-                        <div class="led off" id="fpga2-nate"></div>
-                    </div>
-                    <div class="led-col">
-                        <div class="led-name">Ben</div>
-                        <div class="led off" id="fpga2-ben"></div>
+                        <div class="led-name">User</div>
+                        <div class="led off" id="fpga2-user"></div>
                     </div>
                     <div class="led-col">
                         <div class="led-name">Loaded</div>
@@ -306,32 +267,20 @@
                 </div>
                 <div class="controls">
                     <div class="control-row">
-                        <div class="control-item">
-                            <label>Dan</label>
-                            <select id="fpga2-dan-sel">
-                                <option value="false">Off</option>
-                                <option value="true">On</option>
+                        <div>
+                            <label>User</label>
+                            <select id="fpga2-user-sel">
+                                <option value="none">None</option>
+                                <option value="dan">Dan</option>
+                                <option value="nate">Nate</option>
+                                <option value="ben">Ben</option>
                             </select>
                         </div>
-                        <div class="control-item">
-                            <label>Nate</label>
-                            <select id="fpga2-nate-sel">
-                                <option value="false">Off</option>
-                                <option value="true">On</option>
-                            </select>
-                        </div>
-                        <div class="control-item">
-                            <label>Ben</label>
-                            <select id="fpga2-ben-sel">
-                                <option value="false">Off</option>
-                                <option value="true">On</option>
-                            </select>
-                        </div>
-                        <div class="control-item">
+                        <div>
                             <label>Loaded</label>
                             <select id="fpga2-loaded-sel">
                                 <option value="false">Off</option>
-                                <option value="true">On</option>
+                                <option value="true">Loaded</option>
                             </select>
                         </div>
                     </div>
@@ -344,16 +293,8 @@
                 <div class="fpga-title">FPGA 3</div>
                 <div class="leds">
                     <div class="led-col">
-                        <div class="led-name">Dan</div>
-                        <div class="led off" id="fpga3-dan"></div>
-                    </div>
-                    <div class="led-col">
-                        <div class="led-name">Nate</div>
-                        <div class="led off" id="fpga3-nate"></div>
-                    </div>
-                    <div class="led-col">
-                        <div class="led-name">Ben</div>
-                        <div class="led off" id="fpga3-ben"></div>
+                        <div class="led-name">User</div>
+                        <div class="led off" id="fpga3-user"></div>
                     </div>
                     <div class="led-col">
                         <div class="led-name">Loaded</div>
@@ -362,32 +303,20 @@
                 </div>
                 <div class="controls">
                     <div class="control-row">
-                        <div class="control-item">
-                            <label>Dan</label>
-                            <select id="fpga3-dan-sel">
-                                <option value="false">Off</option>
-                                <option value="true">On</option>
+                        <div>
+                            <label>User</label>
+                            <select id="fpga3-user-sel">
+                                <option value="none">None</option>
+                                <option value="dan">Dan</option>
+                                <option value="nate">Nate</option>
+                                <option value="ben">Ben</option>
                             </select>
                         </div>
-                        <div class="control-item">
-                            <label>Nate</label>
-                            <select id="fpga3-nate-sel">
-                                <option value="false">Off</option>
-                                <option value="true">On</option>
-                            </select>
-                        </div>
-                        <div class="control-item">
-                            <label>Ben</label>
-                            <select id="fpga3-ben-sel">
-                                <option value="false">Off</option>
-                                <option value="true">On</option>
-                            </select>
-                        </div>
-                        <div class="control-item">
+                        <div>
                             <label>Loaded</label>
                             <select id="fpga3-loaded-sel">
                                 <option value="false">Off</option>
-                                <option value="true">On</option>
+                                <option value="true">Loaded</option>
                             </select>
                         </div>
                     </div>
@@ -409,9 +338,9 @@
         let connected = false;
         
         let state = {
-            fpga1: { dan: false, nate: false, ben: false, loaded: false },
-            fpga2: { dan: false, nate: false, ben: false, loaded: false },
-            fpga3: { dan: false, nate: false, ben: false, loaded: false }
+            fpga1: { user: 'none', loaded: false },
+            fpga2: { user: 'none', loaded: false },
+            fpga3: { user: 'none', loaded: false }
         };
         
         function debug(msg) {
@@ -450,11 +379,9 @@
                     debug('MQTT connected successfully');
                     
                     // Subscribe to status updates
-                    const topics = ['dan', 'nate', 'ben', 'loaded'];
                     for (let i = 1; i <= 3; i++) {
-                        for (const topic of topics) {
-                            client.subscribe(`fpga/status/fpga${i}/${topic}`);
-                        }
+                        client.subscribe(`fpga/status/fpga${i}/user`);
+                        client.subscribe(`fpga/status/fpga${i}/loaded`);
                         debug(`Subscribed to fpga${i} topics`);
                     }
                     
@@ -478,8 +405,116 @@
                     
                     const parts = topic.split('/');
                     if (parts.length >= 4 && parts[1] === 'status') {
-                        const fpga = parts[2]; // fpga1, fpga2, fpga3
-                        const prop = parts[3]; // dan, nate, ben, loaded
+                        const fpga = parts[2];
+                        const prop = parts[3];
                         
-                        if (state[fpga] && state[fpga].hasOwnProperty(prop)) {
-                            state[fpga][prop] = payload === 'true';
+                        if (state[fpga]) {
+                            if (prop === 'user') {
+                                state[fpga].user = payload;
+                            } else if (prop === 'loaded') {
+                                state[fpga].loaded = payload === 'true';
+                            }
+                            
+                            updateDisplay();
+                            updateSelects();
+                        }
+                    }
+                });
+                
+            } catch (error) {
+                setStatus('Connection error: ' + error.message, false);
+                debug(`Connection error: ${error.message}`);
+            }
+        }
+        
+        function updateDisplay() {
+            for (let i = 1; i <= 3; i++) {
+                const fpga = `fpga${i}`;
+                const s = state[fpga];
+                
+                // User LED
+                const userLed = document.getElementById(`${fpga}-user`);
+                if (s.user === 'dan') {
+                    userLed.className = 'led red';
+                } else if (s.user === 'nate') {
+                    userLed.className = 'led blue';
+                } else if (s.user === 'ben') {
+                    userLed.className = 'led green';
+                } else {
+                    userLed.className = 'led off';
+                }
+                
+                // Loaded LED (green when loaded, off when not)
+                const loadedLed = document.getElementById(`${fpga}-loaded`);
+                loadedLed.className = `led ${s.loaded ? 'green' : 'off'}`;
+            }
+        }
+        
+        function updateSelects() {
+            for (let i = 1; i <= 3; i++) {
+                const fpga = `fpga${i}`;
+                const s = state[fpga];
+                
+                document.getElementById(`${fpga}-user-sel`).value = s.user;
+                document.getElementById(`${fpga}-loaded-sel`).value = s.loaded.toString();
+            }
+        }
+        
+        function update(num) {
+            if (!connected || !client) {
+                debug('Not connected - cannot send update');
+                return;
+            }
+            
+            const fpga = `fpga${num}`;
+            
+            const user = document.getElementById(`${fpga}-user-sel`).value;
+            const loaded = document.getElementById(`${fpga}-loaded-sel`).value;
+            
+            debug(`Sending: fpga/command/${fpga}/user = ${user}`);
+            debug(`Sending: fpga/command/${fpga}/loaded = ${loaded}`);
+            
+            client.publish(`fpga/command/${fpga}/user`, user);
+            client.publish(`fpga/command/${fpga}/loaded`, loaded);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            debug('Page loaded');
+            
+            // Auto-detect server IP from current URL
+            let serverIP = window.location.hostname;
+            
+            // If no hostname or it's a file:// URL, use localhost
+            if (!serverIP || serverIP === '') {
+                serverIP = 'localhost';
+            }
+            
+            // Set the detected IP in the input field
+            document.getElementById('server').value = serverIP;
+            debug(`Detected server: ${serverIP}`);
+            
+            for (let i = 1; i <= 3; i++) {
+                const fpga = `fpga${i}`;
+                
+                document.getElementById(`${fpga}-user-sel`).addEventListener('change', function() {
+                    state[fpga].user = this.value;
+                    updateDisplay();
+                });
+                
+                document.getElementById(`${fpga}-loaded-sel`).addEventListener('change', function() {
+                    state[fpga].loaded = this.value === 'true';
+                    updateDisplay();
+                });
+            }
+            
+            updateDisplay();
+            
+            // Auto-connect after 1 second delay
+            setTimeout(() => {
+                debug('Auto-connecting...');
+                connect();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
